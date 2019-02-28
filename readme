@@ -1,0 +1,6 @@
+# Dockerでのマウントで問題あり。
+# 実行前に「docker」ディレクトリ以下に権限付与するのが楽。
+# めんどいので777・・・
+chmod -R 777 ./docker
+docker-compose up -d
+
