@@ -1,0 +1,192 @@
+﻿# A5:ER FORMAT:13
+# A5:ER ENCODING:UTF8
+# A5:ER Mk-1 Copyright (C)2007 m.matsubara
+# A5:SQL Mk-2 Copyright (C)1997 m.matsubara
+#  http://www.wind.sannet.ne.jp/m_matsu/developer/a5m2/
+
+[Manager]
+ProjectName=SkillMgr
+Author=T.Nemoto
+MaxEntityRowShow=1000
+ReadOnlyRecommend=0
+Page=Main
+PageInfo="Main",2,"A3Landscape",$FFFFFF
+LogicalView=1
+DecodeDomain=0
+ViewModePageIndividually=1
+ViewMode=2
+ViewFormat=0
+UseNondependenceDashLine=0
+FontName=Tahoma
+FontSize=12
+PaperSize=A4Landscape
+HeaderLeft=
+HeaderCenter=
+HeaderRight=
+FooterLeft=
+FooterCenter=
+FooterRight=
+ShowPageoutRelation=1
+RDBMSType=5
+RDBMSTypeName=MySQL
+DefaultPkName=%0:s_PKC
+DefaultPkIndexName=%0:s_PKI
+DefaultIndexName=%0:s_IX%1:d
+DefaultFkName=%0:s_FK%1:d
+SqlSeparator=0
+ShowTag=1
+ShowCommonAttributes=0
+
+[Entity]
+PName=t_skillsheet_his
+LName=経歴情報
+Comment=
+TableOption=
+Page=MAIN
+Left=100
+Top=100
+Field="経歴情報ID","skill_sheet_his_id","INT","NOT NULL",0,"","",$FFFFFFFF,""
+Field="経歴ID","skill_sheet_id","VARCHAR(255)","NOT NULL",,"","",$FFFFFFFF,""
+Field="ユーザーID","user_id","VARCHAR(255)","NOT NULL",,"","",$FFFFFFFF,""
+Field="連番","seq","INT","NOT NULL",,"","",$FFFFFFFF,""
+Field="削除フラグ","del_flg","INT","NOT NULL",,"","",$FFFFFFFF,""
+Field="作成者","create_user_id","VARCHAR(255)","NOT NULL",,"","",$FFFFFFFF,""
+Field="作成日時","create_date","DATETIME","NOT NULL",,"","",$FFFFFFFF,""
+Field="最終更新者","last_update_user_id","VARCHAR(255)","NOT NULL",,"","",$FFFFFFFF,""
+Field="最終更新日時","last_update_date","DATETIME","NOT NULL",,"","",$FFFFFFFF,""
+EffectMode=None
+Color=$000000
+BkColor=$FFFFFF
+ModifiedDateTime=20190310003414
+Position="MAIN",100,100
+ZOrder=0
+
+[Entity]
+PName=t_skillsheet_detail
+LName=経歴詳細情報
+Comment=
+TableOption=
+Page=MAIN
+Left=750
+Top=100
+Field="経歴情報ID","skill_sheet_his_id","INT","NOT NULL",0,"","",$FFFFFFFF,""
+Field="経歴番号","shill_no","INT","NOT NULL",1,"","",$FFFFFFFF,""
+Field="作業開始年月","work_from_date","DATETIME",,,"","",$FFFFFFFF,""
+Field="作業終了年月","work_to_date","DATETIME",,,"","",$FFFFFFFF,""
+Field="システム名","system_name","VARCHAR(255)",,,"","",$FFFFFFFF,""
+Field="工程リスト","step_list","JSON",,,"","",$FFFFFFFF,""
+Field="役職リスト","position_list","JSON",,,"","",$FFFFFFFF,""
+Field="体制規模","scale_code","VARCHAR(255)",,,"","",$FFFFFFFF,""
+Field="動作環境リスト","environment_list","JSON",,,"","",$FFFFFFFF,""
+Field="ミドルウェアリスト","middleware_list","JSON",,,"","",$FFFFFFFF,""
+Field="言語リスト","language_list","JSON",,,"","",$FFFFFFFF,""
+Field="その他リスト","other_list","JSON",,,"","",$FFFFFFFF,""
+Field="削除フラグ","del_flg","INT",,,"","",$FFFFFFFF,""
+Field="作成者","create_user_id","VARCHAR(255)","NOT NULL",,"","",$FFFFFFFF,""
+Field="作成日時","create_date","DATETIME","NOT NULL",,"","",$FFFFFFFF,""
+Field="最終更新者","last_update_user_id","VARCHAR(255)","NOT NULL",,"","",$FFFFFFFF,""
+Field="最終更新日時","last_update_date","DATETIME","NOT NULL",,"","",$FFFFFFFF,""
+EffectMode=None
+Color=$000000
+BkColor=$FFFFFF
+ModifiedDateTime=20190310003433
+Position="MAIN",750,100
+ZOrder=1
+
+[Relation]
+Entity1=t_skillsheet_his
+Entity2=t_skillsheet_detail
+RelationType1=1
+RelationType2=3
+Fields1=skill_sheet_his_id
+Fields2=skill_sheet_his_id
+Cardinarity1=
+Cardinarity2=
+Position="MAIN",0,991,9009,1150,R,R
+Dependence=0
+Caption=
+PName=
+LineMode=0
+Bar1=99
+Bar2=901
+Bar3=115
+TermPos1=R
+TermPos2=R
+ZOrder=2
+
+[Entity]
+PName=m_code
+LName=コードマスタ
+Comment=
+TableOption=
+Page=MAIN
+Left=100
+Top=1700
+Field="コードID","code_id","VARCHAR(255)","NOT NULL",0,"","",$FFFFFFFF,""
+Field="コード詳細ID","code_detail_id","VARCHAR(255)","NOT NULL",1,"","",$FFFFFFFF,""
+Field="コード名","code_name","VARCHAR(255)",,,"","",$FFFFFFFF,""
+Field="コード詳細名","code_detail_name","VARCHAR(255)",,,"","",$FFFFFFFF,""
+Field="表示順","sort","INT",,,"","",$FFFFFFFF,""
+Field="削除フラグ","del_flg","INT","NOT NULL",,"","",$FFFFFFFF,""
+Field="作成者","create_user_id","VARCHAR(255)","NOT NULL",,"","",$FFFFFFFF,""
+Field="作成日時","create_date","DATETIME","NOT NULL",,"","",$FFFFFFFF,""
+Field="最終更新者","last_update_user_id","VARCHAR(255)","NOT NULL",,"","",$FFFFFFFF,""
+Field="最終更新日時","last_update_date","DATETIME","NOT NULL",,"","",$FFFFFFFF,""
+EffectMode=None
+Color=$000000
+BkColor=$FFFFFF
+ModifiedDateTime=20190310003510
+Position="MAIN",100,1700
+ZOrder=3
+
+[Entity]
+PName=t_skillsheet_profile
+LName=経歴詳細プロフィール情報
+Comment=
+TableOption=
+Page=MAIN
+Left=200
+Top=750
+Field="経歴情報ID","skill_sheet_his_id","INT","NOT NULL",0,"","",$FFFFFFFF,""
+Field="氏名","full_name","VARCHAR(255)",,,"","",$FFFFFFFF,""
+Field="性別","sex","VARCHAR(255)",,,"","",$FFFFFFFF,""
+Field="生年月","birthday","DATETIME",,,"","",$FFFFFFFF,""
+Field="年齢","age","INT",,,"","",$FFFFFFFF,""
+Field="住所","address","VARCHAR(255)",,,"","",$FFFFFFFF,""
+Field="最寄り駅","nearest_station","VARCHAR(255)",,,"","",$FFFFFFFF,""
+Field="最終学歴","final_education","VARCHAR(255)",,,"","",$FFFFFFFF,""
+Field="学部学科","department","VARCHAR(255)",,,"","",$FFFFFFFF,""
+Field="卒業年月","graduation","DATETIME",,,"","",$FFFFFFFF,""
+Field="資格","license_list","JSON",,,"","",$FFFFFFFF,""
+Field="削除フラグ","del_flg","INT","NOT NULL",,"","",$FFFFFFFF,""
+Field="作成者","create_user_id","VARCHAR(255)","NOT NULL",,"","",$FFFFFFFF,""
+Field="作成日時","create_date","DATETIME","NOT NULL",,"","",$FFFFFFFF,""
+Field="最終更新者","last_update_user_id","VARCHAR(255)","NOT NULL",,"","",$FFFFFFFF,""
+Field="最終更新日時","last_update_date","DATETIME","NOT NULL",,"","",$FFFFFFFF,""
+EffectMode=None
+Color=$000000
+BkColor=$FFFFFF
+ModifiedDateTime=20190310232841
+Position="MAIN",200,750
+ZOrder=4
+
+[Relation]
+Entity1=t_skillsheet_his
+Entity2=t_skillsheet_profile
+RelationType1=2
+RelationType2=3
+Fields1=skill_sheet_his_id
+Fields2=skill_sheet_his_id
+Cardinarity1=
+Cardinarity2=
+Position="MAIN",0,698,9302,762,R,R
+Dependence=1
+Caption=
+PName=
+LineMode=0
+Bar1=70
+Bar2=930
+Bar3=76
+TermPos1=R
+TermPos2=R
+ZOrder=5
