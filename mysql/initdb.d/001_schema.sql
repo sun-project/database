@@ -1,5 +1,5 @@
 -- Project Name : SkillMgr
--- Date/Time    : 2019/03/10 23:28:55
+-- Date/Time    : 2019/03/11 23:12:07
 -- Author       : T.Nemoto
 -- RDBMS Type   : MySQL
 -- Application  : A5:SQL Mk-2
@@ -53,13 +53,13 @@ create table m_code (
 --* RestoreFromTempTable
 create table t_skillsheet_detail (
   skill_sheet_his_id INT not null comment '経歴情報ID'
-  , shill_no INT not null comment '経歴番号'
+  , skill_no INT not null comment '経歴番号'
   , work_from_date DATETIME comment '作業開始年月'
   , work_to_date DATETIME comment '作業終了年月'
   , system_name VARCHAR(255) comment 'システム名'
   , step_list JSON comment '工程リスト'
   , position_list JSON comment '役職リスト'
-  , scale_code VARCHAR(255) comment '体制規模'
+  , scale_name VARCHAR(255) comment '体制規模'
   , environment_list JSON comment '動作環境リスト'
   , middleware_list JSON comment 'ミドルウェアリスト'
   , language_list JSON comment '言語リスト'
@@ -69,7 +69,7 @@ create table t_skillsheet_detail (
   , create_date DATETIME not null comment '作成日時'
   , last_update_user_id VARCHAR(255) not null comment '最終更新者'
   , last_update_date DATETIME not null comment '最終更新日時'
-  , constraint t_skillsheet_detail_PKC primary key (skill_sheet_his_id,shill_no)
+  , constraint t_skillsheet_detail_PKC primary key (skill_sheet_his_id,skill_no)
 ) comment '経歴詳細情報' ;
 
 -- 経歴情報
@@ -86,4 +86,3 @@ create table t_skillsheet_his (
   , last_update_date DATETIME not null comment '最終更新日時'
   , constraint t_skillsheet_his_PKC primary key (skill_sheet_his_id)
 ) comment '経歴情報' ;
-
