@@ -1,5 +1,5 @@
 -- Project Name : SkillMgr
--- Date/Time    : 2019/03/11 23:12:07
+-- Date/Time    : 2019/03/12 22:38:09
 -- Author       : T.Nemoto
 -- RDBMS Type   : MySQL
 -- Application  : A5:SQL Mk-2
@@ -24,6 +24,7 @@ create table t_skillsheet_profile (
   , final_education VARCHAR(255) comment '最終学歴'
   , department VARCHAR(255) comment '学部学科'
   , graduation DATETIME comment '卒業年月'
+  , graduation_type VARCHAR(255) comment '卒業区分'
   , license_list JSON comment '資格'
   , del_flg INT not null comment '削除フラグ'
   , create_user_id VARCHAR(255) not null comment '作成者'

@@ -62,6 +62,7 @@ INTO `skillMgr`.t_skillsheet_profile(
   , final_education
   , department
   , graduation
+  , graduation_type
   , license_list
   , del_flg
   , create_user_id
@@ -80,6 +81,7 @@ VALUES (
   , "県立高等学校"
   , "情報処理科"
   , "2001-03-31"
+  , "卒業"
   , JSON_ARRAY("日商簿記検定2級合格","全商情報処理検定1級合格")
   , 0
   , "nemoto"
@@ -100,6 +102,7 @@ INTO `skillMgr`.t_skillsheet_profile(
   , final_education
   , department
   , graduation
+  , graduation_type
   , license_list
   , del_flg
   , create_user_id
@@ -118,6 +121,7 @@ VALUES (
   , "県立高等学校"
   , "情報処理科"
   , "2001-03-31"
+  , "中退"
   , JSON_ARRAY("日商簿記検定2級合格","全商情報処理検定1級合格")
   , 0
   , "nemoto"

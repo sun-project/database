@@ -121,7 +121,7 @@ Comment=
 TableOption=
 Page=MAIN
 Left=100
-Top=1700
+Top=1750
 Field="コードID","code_id","VARCHAR(255)","NOT NULL",0,"","",$FFFFFFFF,""
 Field="コード詳細ID","code_detail_id","VARCHAR(255)","NOT NULL",1,"","",$FFFFFFFF,""
 Field="コード名","code_name","VARCHAR(255)",,,"","",$FFFFFFFF,""
@@ -136,7 +136,7 @@ EffectMode=None
 Color=$000000
 BkColor=$FFFFFF
 ModifiedDateTime=20190310003510
-Position="MAIN",100,1700
+Position="MAIN",100,1750
 ZOrder=3
 
 [Entity]
@@ -157,6 +157,7 @@ Field="最寄り駅","nearest_station","VARCHAR(255)",,,"","",$FFFFFFFF,""
 Field="最終学歴","final_education","VARCHAR(255)",,,"","",$FFFFFFFF,""
 Field="学部学科","department","VARCHAR(255)",,,"","",$FFFFFFFF,""
 Field="卒業年月","graduation","DATETIME",,,"","",$FFFFFFFF,""
+Field="卒業区分","graduation_type","VARCHAR(255)",,,"","",$FFFFFFFF,""
 Field="資格","license_list","JSON",,,"","",$FFFFFFFF,""
 Field="削除フラグ","del_flg","INT","NOT NULL",,"","",$FFFFFFFF,""
 Field="作成者","create_user_id","VARCHAR(255)","NOT NULL",,"","",$FFFFFFFF,""
@@ -166,7 +167,7 @@ Field="最終更新日時","last_update_date","DATETIME","NOT NULL",,"","",$FFFF
 EffectMode=None
 Color=$000000
 BkColor=$FFFFFF
-ModifiedDateTime=20190310232841
+ModifiedDateTime=20190312223750
 Position="MAIN",200,750
 ZOrder=4
 
